@@ -10,10 +10,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Kritons,"> 
-    <meta name="description" content="网络协议
-网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。
+    <meta name="description" content="网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。
 TCP/IP概述要点
-IP（Internet Pr,"> 
+IP（Internet Protoco,"> 
     <meta name="author" content="kritons"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -66,8 +65,7 @@ IP（Internet Pr,">
 
         </div>
         <div class="content markdown">
-            <h1 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h1><hr>
-<h3 id="网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。"><a href="#网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。" class="headerlink" title="网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。"></a>网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。</h3><hr>
+            <h3 id="网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。"><a href="#网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。" class="headerlink" title="网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。"></a>网络协议的系统概述以及其要点，涵盖相关协议的原理，应用以及其部分实施的原理和其具体的步骤，其中还包含了自己对网络协议的相关理解跟见解等。</h3><hr>
 <h2 id="TCP-IP概述要点"><a href="#TCP-IP概述要点" class="headerlink" title="TCP/IP概述要点"></a>TCP/IP概述要点</h2><ul>
 <li>IP（Internet Protocol）可以屏蔽底层物理的各种各样的差异，向上提供一致性。</li>
 <li>网络协议的分层：<img src="/photos/tcp.png" alt="网络协议的分层"></li>
@@ -103,20 +101,63 @@ IP（Internet Pr,">
 <li>主机联网时广播自己的IP/MAC关系</li>
 </ol>
 </li>
-<li>ARP欺骗：</li>
+<li><strong>ARP欺骗</strong>：<ul>
+<li>嗅探器 ：利用嗅探获取网络中的通信数据。</li>
+<li>基于ARP欺骗的会话劫持：假如网络中2台主机A和B要通信，有一台主机要嗅探他们之间的数据，H先向A发送一个ARP应答报文，其中包含IPb/MACh的映射，A更新自己的ARP缓存；随后H向B发送一个ARP应答报文，其中包括IPa/MACh的映射，B更新自己的ARP缓存，鉴于ARP缓存会定更新，H只要以较小于更新时间频率发送ARP欺骗报文就可以持续嗅探A和B之间的通信报文。</li>
+<li>预防：使用静态缓存，在DOS上指定IP和MAC地址，或者使用ARP防欺骗工具等以及对数据加密。</li>
+</ul>
+</li>
 </ul>
 <hr>
 <h2 id="IP（Internet-Protocol）"><a href="#IP（Internet-Protocol）" class="headerlink" title="IP（Internet Protocol）"></a>IP（Internet Protocol）</h2><ul>
-<li>IP协议的特点：<ul>
+<li>IP数据报的特点<ul>
 <li>提供了一种无连接的传递机制（不建立链接，各数据报可能通过不同路径传递）</li>
 <li>不保证数据报传输的可靠性（不纠错，不报告）</li>
-<li>尽最大努力投递机制（不轻易丢弃数据报）<ul>
-<li>IP数据报的格式：</li>
+<li>尽最大努力投递机制（不轻易丢弃数据报）</li>
+</ul>
+</li>
+<li>IP数据报的格式：<img src="/photos/ip.png" alt="IP数据报格式"></li>
+<li>IP数据报的分片和重组：<ul>
+<li>IP数据报首部标志字段：0（保留吗），1（DF：0可分片；1不可分片；），2（MF：0，最后一个分片；1不是最后一个分片），若DF为0，且数据报大于MTU值，则丢弃。</li>
+<li>IP数据报要求各分片按一个物理帧发送，切偏位移为8的整数倍。</li>
+<li>分片地点为信宿机而非路由器等中间机器：1.减少路由器负担；2.避免重复分片;3.每个分片可独自选路。</li>
+<li>重组：DF为1为单个数据报，为0为分片，利用如FreeBSD算法将数据报重组，设置超时定时器，若在规定时间内未收到全部分片则丢失整个数据报。</li>
+<li>FreeBSD算法：基于”洞”的算法，首先为数据报分配一片缓冲区，然后接收的每个分片填入缓冲区。</li>
 </ul>
 </li>
 </ul>
-</li>
+<hr>
+<h2 id="ICMP-Internet-Control-Message-Protocol"><a href="#ICMP-Internet-Control-Message-Protocol" class="headerlink" title="ICMP(Internet Control Message Protocol)"></a>ICMP(Internet Control Message Protocol)</h2><ul>
+<li>ICMP协议解决的问题有：<ul>
+<li>解决配置错误造成的回路，设置TTL字段，每进过一个路由器减1，到0时丢弃报文。</li>
+<li>分片重组时报文丢失,设置超时定时器，超时时丢弃报文。</li>
+<li>路由器找不到目的地。</li>
 </ul>
+</li>
+<li>差错报告类报文：<ol>
+<li>其数据区包含发送差错的IP数据报首部以及数据区前64bit（此包含了错误信息）</li>
+<li>仅向源端报告差错，不向中间路由器报告</li>
+<li>携带ICMP差错报文发生差错时，不会生成ICMP报文</li>
+<li>应由于分片报文时，仅对第一个分片生成报文</li>
+</ol>
+<ul>
+<li>目的站不可达报文：代码字段给出原因</li>
+<li>超时报文：（TTL超时，代码字段为0；重组超时，代码字段为1）</li>
+<li>参数错误报文：（无法应用上述2个报文解释的报文，其报文指针指向发送差错的第一个字段）</li>
+</ul>
+</li>
+<li>请求应带报文（用于测试网络联通性）：<ul>
+<li>类型：8-&gt;会送请求；0-&gt;会送应带</li>
+<li>标识和序号用于匹配报文</li>
+</ul>
+</li>
+<li>地址掩码请求和应答报文（主机为得知本网络地址掩码，向路由器发送报文，若不知道路由器地址则广播）<ul>
+<li>类型：17-&gt;请求；18-&gt;应答</li>
+</ul>
+</li>
+<li><strong>UDP-Lite</strong>：将数据分为敏感区和非敏感区，当所有数据均为非敏感区时，UDP-Lite = UDP报文。</li>
+</ul>
+<hr>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

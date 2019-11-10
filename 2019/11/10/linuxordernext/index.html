@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Linux命令集（下） - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="Linux的部分命令集合（文件及各类包），包含了大部分的文件及包的Linux命令，如打包和压缩文件，RPM包，DEB包，YUM及APT使用，文本处理，文件系统，网络设备等。
+打包和压缩文件
+bunz,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Linux命令集（下）</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Linux命令集（下）</h1>
+        <div class="stuff">
+            <span>十一月 10, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="Linux的部分命令集合（文件及各类包），包含了大部分的文件及包的Linux命令，如打包和压缩文件，RPM包，DEB包，YUM及APT使用，文本处理，文件系统，网络设备等。"><a href="#Linux的部分命令集合（文件及各类包），包含了大部分的文件及包的Linux命令，如打包和压缩文件，RPM包，DEB包，YUM及APT使用，文本处理，文件系统，网络设备等。" class="headerlink" title="Linux的部分命令集合（文件及各类包），包含了大部分的文件及包的Linux命令，如打包和压缩文件，RPM包，DEB包，YUM及APT使用，文本处理，文件系统，网络设备等。"></a>Linux的部分命令集合（文件及各类包），包含了大部分的文件及包的Linux命令，如打包和压缩文件，RPM包，DEB包，YUM及APT使用，文本处理，文件系统，网络设备等。</h3><hr>
+<h2 id="打包和压缩文件"><a href="#打包和压缩文件" class="headerlink" title="打包和压缩文件"></a>打包和压缩文件</h2><ul>
+<li>bunzip2 file1，bz2 解压一个叫file.bz2的文件</li>
+<li>bzip2 file1 压缩一个叫file1的文件</li>
+<li>gunzip file1.gz 解压一个叫file1.gz的文件</li>
+<li>gzip file1 压缩一个叫file1的文件</li>
+<li>gzip -9 file1 最大程度压缩file1文件</li>
+<li>rar x file1.rar 解压rar包</li>
+<li>unrar x file1.rar 解压rar包</li>
+<li>rar a file1.rar test_ file 创建一个叫file.rar的包</li>
+<li>rar a file1.rar file1 file2 dir1 同时压缩file1，file2，dir1目录</li>
+<li>tar -tf archive.tar 显示一个包里的内容</li>
+<li>tar -cvf archive.tar file1 创建一个非压缩的tarball</li>
+<li>tar -cvf archive.tar fiel1 file2 dir1 创建一个包含file1，file2，dir1目录的档案文件</li>
+<li>tar -xvf archive.tar 释放一个包</li>
+<li>tar -xvf archive.tar -C/tmp 将压缩包解压到/tmp目录下</li>
+<li>tar -cvfj archive.tar.bz2 dir1 创建一个bzip2格式的压缩包</li>
+<li>tar -jxvf archive.tar.bz2 解压一个bzip2格式的压缩包</li>
+<li>tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包</li>
+<li>tar -zxvf archive.tar.gz 解压一个gzip格式的压缩包</li>
+<li>zip file1.zip file1 创建一个zip格式的压缩包</li>
+<li>unzip file1.zip 解压一个zip格式的压缩包</li>
+</ul>
+<hr>
+<h2 id="RPM包"><a href="#RPM包" class="headerlink" title="RPM包"></a>RPM包</h2><ul>
+<li>rpm -ivh package.rpm 安装一个rpm包</li>
+<li>rpm -ivh –nodeeps package.rpm 安装一个rpm包，且忽略依赖警告</li>
+<li>rpm -U package.rpm 更新一个rpm包且不改变其配置文件</li>
+<li>rpm -F package.rpm 更新一个确定已经安装的rpm包</li>
+<li>rpm -e package_name 删除一个rpm包</li>
+<li>rpm -qa 显示系统已安装的所有rpm包</li>
+<li>rpm -qa | grep httpd 显示已安装的含httpd字样的rpm包</li>
+<li>rpm -qi package_name 显示一个已安装的rpm包的特殊信息</li>
+<li>rpm -ql package_name 显示一个已安装的rpm包的文件列表</li>
+<li>rpm -qc package_name 显示一个已安装的rpm包的配置文件列表</li>
+<li>rpm -q package_name –whatrequires 显示于一个已安装的rpm包的依赖关系列表</li>
+<li>rpm -q package_name –whatprovides 显示一个rpm包所占的体积</li>
+<li>rpm -q package_name –scripts 显示在安装/删除期间执行的脚本</li>
+<li>rpm -q package_name –changelog 显示一个包的修改历史</li>
+<li>rpm –checksig package.rpm 确认一个包的完整性</li>
+<li>rpm -qa gpg-pubkey所有已安装包的完整性</li>
+</ul>
+<hr>
+<h2 id="YUM"><a href="#YUM" class="headerlink" title="YUM"></a>YUM</h2><ul>
+<li>yum install package_name 下载并安装一个rpm包</li>
+<li>yum localinstall package_name.rpm 将安装一个rpm包并且使用软件库解决依赖关系</li>
+<li>yum update package_name.rpm 更新当前系统所有安装的rpm包</li>
+<li>yum update package_name 更新一个rpm包</li>
+<li>yum remove package_name 删除一个rpm包</li>
+<li>yum list 列出当前系统已安装的rpm包</li>
+<li>yum search package_name 在npm仓库搜寻包</li>
+<li>yum clean packages 清理缓存，删除已经下载的包</li>
+<li>yum clean headers 删除所有头文件</li>
+<li>yum clean all 清理缓存并删除头文件</li>
+</ul>
+<hr>
+<h2 id="DEB包"><a href="#DEB包" class="headerlink" title="DEB包"></a>DEB包</h2><ul>
+<li>dpkg -i package.deb 安装/更新一个deb包</li>
+<li>dpkg -r package.deb 删除一个的deb包</li>
+<li>dpkg -l 显示系统所有安装的deb包</li>
+<li>dpkg -l | gerp httpd 显示系统所有安装的带httpd字样的deb包</li>
+<li>dpkg -s package_name 获取一个已经安装在系统中的特殊包的信息</li>
+<li>dpkg -L package_name 获取已经安装的一个deb包的文件列表</li>
+<li>dpkg –contents package.deb 获取一个未安装的包提供的文件列表</li>
+<li>dpkg -S /bin/ping 确认所给文件由那个包提供</li>
+</ul>
+<hr>
+<h2 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h2><ul>
+<li>apt-get install package_name 安装/更新一个deb包</li>
+<li>apt-cdrom install package_name 从光盘上安装/更新以恶搞deb包</li>
+<li>apt-get update 升级列表中的软件包</li>
+<li>apt-get upgrade 升级已安装的包</li>
+<li>apt-get remove package_name 从系统中删除一个deb包</li>
+<li>apt-get check 确认软件仓库依赖是否正确</li>
+<li>apt-get clean 清理下载缓存</li>
+<li>apt-cache search searched-package 返回包含要搜索的字符串的软件包名称</li>
+</ul>
+<hr>
+<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><ul>
+<li>grep Aug /home/file1 在/home/file1中查找关键词Aug</li>
+<li>grep ^Aug /home/file1 在/home/file1中查找关键词Aug开始的词汇</li>
+<li>grep [0-9] /home/file1 在home/file1中选择所有数字行</li>
+<li>sed ‘s/string1/string2/g’ example.txt 在example.txt中将string1替换成string2</li>
+<li>sed -n ‘/string/p’ 查看包含string字样的行</li>
+</ul>
+<hr>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><ul>
+<li>badblocks -v /dev/hda1 检查hda1上的坏磁块</li>
+<li>fsck /dev/hda1 修复/检查hda1磁盘上的Linux系统的完整性</li>
+<li>mkfs /dev/hda1 在hda1分区上创建一个文件系统</li>
+<li>mke2fs /dev/hda1 在hda1分区上创建一个ext2文件系统</li>
+<li>mke2fs -j /dev/hda1 在hda1分区上创建一个ext3文件系统（日志型）</li>
+<li>mkfs -t vfat 32-F /dev/hda1 在hda1分区上创建一个FAT32的文件系统</li>
+<li>fdformat -n /dev/fb0 格式化一个软盘</li>
+<li>mkswap /dev/hda3 在hda3分区上创建一个swap文件系统</li>
+<li>swapoon /dev/hda3 启用一个swap文件系统</li>
+</ul>
+<hr>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
+<li>ifconfig 显示网络配置</li>
+<li>ifconfig eth0 显示eth0网卡配置</li>
+<li>ifup eth0 启用eth0网卡</li>
+<li>ifdown eth0 禁用eth0网卡</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
