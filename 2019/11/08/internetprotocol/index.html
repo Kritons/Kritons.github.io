@@ -158,6 +158,53 @@ IP（Internet Protoco,">
 <li><strong>UDP-Lite</strong>：将数据分为敏感区和非敏感区，当所有数据均为非敏感区时，UDP-Lite = UDP报文。</li>
 </ul>
 <hr>
+<h2 id="UDP-User-Datagram-Protocol"><a href="#UDP-User-Datagram-Protocol" class="headerlink" title="UDP(User Datagram Protocol)"></a>UDP(User Datagram Protocol)</h2><hr>
+<h2 id="TCP（Transmission-Control-Protocol）"><a href="#TCP（Transmission-Control-Protocol）" class="headerlink" title="TCP（Transmission Control Protocol）"></a>TCP（Transmission Control Protocol）</h2><ul>
+<li>TCP协议为端到端，面向链接，提供可靠性的传输协议。<ol>
+<li>面向数据流，与应用程序接收到的bit流一致（以字节为单位）</li>
+<li>虚电路链接：传输之前开始交互确认</li>
+<li>有缓冲的传输：双方设置缓冲区，数据量较小的时候使用推push操作</li>
+<li>无结构数据流服务：不提供结构数据流</li>
+<li>全双工连接：双方都可以同时接发收数据</li>
+</ol>
+</li>
+<li><strong>TCP链接建立：三次握手建立链接</strong><ol>
+<li>客户端发送SYN（报文段），指明客户端的端口以及初始序号ISM（seq=x）</li>
+<li>服务器端收到后发送服务器的初始序号ISN（seq=y）的SYN报文段应答，并且包含ACK（确认信息）。确认序号为客户端的ISN+1（x+1），表示已收到报文</li>
+<li>客户端收到报文后，发送确认序号为ISN（y+1）的报文段，对服务器确认已经收到报文，并表示成功建立链接</li>
+</ol>
+</li>
+<li>TCP三次握手完成的功能有：<ol>
+<li>同意链接</li>
+<li>协商各报文字段的初始ISN序号（<strong>ISN规定不为1，防止IP欺骗</strong>）</li>
+<li>协商最大报文字段</li>
+</ol>
+</li>
+<li>三次握手建立连接可协商MSS（最大报文字段），并根据MSS设置缓存区，提高效率，在局域网中，可放入每一帧，从而充分利用带宽，使之与网络中的MTU相适应（一般最小的MTU为MSS）MSS</li>
+<li><strong>TCP链接断开:四次握手断开链接</strong><ol>
+<li>网点1数据接收完成后，发送一个FIN报文，ISN（seq=x）</li>
+<li>网点2收到FIN报文后，发送一个ACK报文，ISN（seq=x+1）</li>
+<li>网点2通知应用程序再无数据流入，关闭链接，发送FIN报文给网点1，ISN（seq=y）</li>
+<li>网点1收到FIN报文后，发送ACK报文，ISN（seq=y+1）</li>
+</ol>
+<ul>
+<li>（由于为全双工链接，所以双方必须关闭其自己的链接）</li>
+</ul>
+</li>
+<li>TCP可提供半封闭功能，第二步后，网点2仍可发送数据，网点1可会ACK报文确认。</li>
+<li>TCP的连接异常关闭：发送端发送一个RST报文段此时双方关闭连接并释放缓存区。</li>
+<li>TCP的半开连接检测：TCP引入保活定时器，若一段时间客户端无响应，则发送探察报文有响应则重置计时器，无响应则关闭计时器。</li>
+<li><strong>SYN洪范攻击：</strong>利用半完成的半开连接，大量主机占用服务器资源</li>
+<li>与UDP相似，TCP允许一台机器上多个应用程序同时进行通信，并且使用端口号标识进程，但是TCP是面向连接的协议而不是对应端口，而是一条虚链路，所以TCP用端点（IP，端口号）来标识以连接。</li>
+<li>防丢失：发送方发送报文后会保存一段记录，并启动计时器，如果在一段时间内未收到ACK报文则认为丢失，进行重传操作（根据RTT（往返时间调整计时器））</li>
+<li>防重复及乱序：对报文进行编号，接收方会记住序号，即ISN，由双方协定，体现了面向数据流的特征（n+1报文序号=n报文序号+n报文长度），以字节计。</li>
+<li>自适应重传算法以及改进后的算法：Karn算法和定时器补偿</li>
+<li>TCP 滑动窗口：与ICMP（IPsec）等协议不同的是其滑动窗口不是按报文段而是字节来滑动<ul>
+<li>利用滑动窗口实现端到端的流量控制，根据其接收方的缓冲区大小来调节发送方的滑动窗口。</li>
+</ul>
+</li>
+<li>TCP糊涂窗口综合征 </li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
