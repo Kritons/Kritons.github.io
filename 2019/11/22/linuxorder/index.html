@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Linux命令集（上） - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="Linux的部分命令集合，包含了大部分的日常Linux命令，如系统信息类，系统的操作，文件及目录的操作，文件搜索，文件查看，文件权限，用户和群组，挂载文件系统等。
+系统信息类
+arch 显示机器处理,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Linux命令集（上）</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Linux命令集（上）</h1>
+        <div class="stuff">
+            <span>十一月 22, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="Linux的部分命令集合，包含了大部分的日常Linux命令，如系统信息类，系统的操作，文件及目录的操作，文件搜索，文件查看，文件权限，用户和群组，挂载文件系统等。"><a href="#Linux的部分命令集合，包含了大部分的日常Linux命令，如系统信息类，系统的操作，文件及目录的操作，文件搜索，文件查看，文件权限，用户和群组，挂载文件系统等。" class="headerlink" title="Linux的部分命令集合，包含了大部分的日常Linux命令，如系统信息类，系统的操作，文件及目录的操作，文件搜索，文件查看，文件权限，用户和群组，挂载文件系统等。"></a>Linux的部分命令集合，包含了大部分的日常Linux命令，如系统信息类，系统的操作，文件及目录的操作，文件搜索，文件查看，文件权限，用户和群组，挂载文件系统等。</h3><hr>
+<h2 id="系统信息类"><a href="#系统信息类" class="headerlink" title="系统信息类"></a>系统信息类</h2><ul>
+<li>arch 显示机器处理器架构</li>
+<li>uname -m 显示机器处理器架构</li>
+<li>uname -r 显示正在使用的内核版本L</li>
+<li>dmidecode -q 显示硬件系统部件</li>
+<li>hdparm -i /dev/hda 罗列一个磁盘的架构特性</li>
+<li>hdparm -tT /dev/sda 在磁盘上执行测试性读取操作</li>
+<li>cat /proc/cpu/cpuinfo 显示CPUinfo的信息</li>
+<li>cat /proc/interrupts 显示中断</li>
+<li>cat /proc/menminfo 显示内存使用</li>
+<li>cat /proc/swaps 显示哪些swaps被使用</li>
+<li>cat /proc/version 显示内核版本</li>
+<li>cat /proc/net/dev 显示网络适配器以及统计</li>
+<li>cat /proc/net/mounts 显示已经加载的文件系统</li>
+<li>lspci -tv 显示PCI设备</li>
+<li>lsusb -tv 显示USB设备</li>
+<li>date 显示系统日期</li>
+<li>cal 2019 显示2019日历表</li>
+<li>date 041217002007.00 设置日期和时间</li>
+<li>clock -w 将时间修改保存到BIOS</li>
+</ul>
+<hr>
+<h2 id="系统的操作"><a href="#系统的操作" class="headerlink" title="系统的操作"></a>系统的操作</h2><ul>
+<li>shutdown -h now 关闭系统</li>
+<li>init 0 关闭系统/</li>
+<li>telinit 0 关闭系统</li>
+<li>shutdown -h hours:minutes &amp; 按预定时间关闭系统</li>
+<li>shutdown -c 取消按预定时间关闭系统</li>
+<li>shutdown -r now 重启</li>
+<li>reboot 重启</li>
+<li>logout 注销</li>
+</ul>
+<hr>
+<h2 id="文件以及目录"><a href="#文件以及目录" class="headerlink" title="文件以及目录"></a>文件以及目录</h2><p><strong>CD</strong></p>
+<ul>
+<li>cd /home 进入home目录</li>
+<li>cd .. 返回上级目录</li>
+<li>cd ../..返回上2级目录</li>
+<li>cd 进入个人主目录</li>
+<li>cd ~user1 进入个人主目录</li>
+<li>cd - 返回上次所在目录</li>
+</ul>
+<p><strong>pwd</strong></p>
+<ul>
+<li>pwd 显示工作路径</li>
+</ul>
+<p><strong>ls</strong></p>
+<ul>
+<li>ls 查看目录文件</li>
+<li>ls -f 查看目录文件</li>
+<li>ls -l 显示文件以及目录详细文件</li>
+<li>ls -a 显示隐藏文件</li>
+<li>ls *[0-9]*显示包含数字0-9的目录以及文件</li>
+</ul>
+<p><strong>tree</strong></p>
+<ul>
+<li>tree 显示文件以及目录由根目录显示的树形结构</li>
+<li>lstree 同上</li>
+</ul>
+<p><strong>touch</strong></p>
+<ul>
+<li>touch file1 创建一个file1的文件</li>
+</ul>
+<p><strong>mkdir</strong></p>
+<ul>
+<li>mkdir dir1 创建一个dir1名字的目录</li>
+<li>mkdir dir1 dir2 创建2个目录</li>
+<li>mkdir -p /tmp/dir1/dir2 创建以恶搞目录树</li>
+</ul>
+<p><strong>rm</strong></p>
+<ul>
+<li>rm -f file1 删除一个file1文件</li>
+<li>rmdir dir1 删除一个dir1目录</li>
+<li>rm -rf dir1 删除一个dir1目录并同时删除其内容</li>
+<li>rm -rf dir1 dir2 删除dir1，dir2目录和其内容</li>
+<li><em>mv*</em></li>
+<li>mv dir1 new_ dir 重命名/移动一个目录</li>
+</ul>
+<p><strong>cp</strong></p>
+<ul>
+<li>cp file1 file2 复制一文件</li>
+<li>cp dir/*. 复制一个目录所有文件到当前工作目录</li>
+<li>cp -a /tmp/dir1 复制一个目录到当前工作目录</li>
+<li>cp -a dir1 dir2 复制一个目录</li>
+</ul>
+<p><strong>ln</strong></p>
+<ul>
+<li>ln -s file1 lnk1 创建一个指向文件或者目录的软链接</li>
+<li>ln file1 lnk1 创建一个指向文件或者目录的物理链接</li>
+</ul>
+<p><strong>其他</strong></p>
+<ul>
+<li>touch -t 0712250000 file1 修改一个文件或者目录的时间戳（YYMMDDhhmm）</li>
+</ul>
+<hr>
+<h2 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h2><ul>
+<li>grep -rn  ccc *  <u>在当前目录下的文件以及子目录下的文件搜索ccc字样并把它以行的形式输出（-rn：以行的形式输出；* 正则表达式表示递归搜索所有子目录及其子文件，可替换为文件明，表示搜索当前目录的文件)</u></li>
+<li>find / -name file1 从根文件开始搜索file文件和目录</li>
+<li>find / -user user1 从根文件开始搜索属于user1的文件和目录</li>
+<li>find /home/user1 -name *.bin 在/home/user1中搜索带有.bin后缀的文件</li>
+<li>find /usr/bin -type f -atime +100 搜索在过去100天内被使用的文件</li>
+<li>find /usr/bin -type f -mtime -10 搜索在过去10天内被创建或被修改过的文件</li>
+<li>find / -name *.rpm -exec chmod 755 ‘{}’ \搜索以rpm结尾的文件并定义其权限</li>
+<li>whereis halt 显示一个二进制文件</li>
+<li>which halt 显示一个二进制文件或可执行文件的完整路径</li>
+</ul>
+<hr>
+<h2 id="文件查看"><a href="#文件查看" class="headerlink" title="文件查看"></a>文件查看</h2><ul>
+<li>cat file1 正向查看file1文件内容</li>
+<li>tac file1 反向查看file1文件内容</li>
+<li>more file1 查看一个长文件内容</li>
+<li>less file1 与more一致，但是允许反向操作</li>
+<li>head -2 file1 查看文件前面2行</li>
+<li>tail -2 file1 查看文件最后2行</li>
+<li>tail -f /var/log/messages 实时查看被添加到文件的内容</li>
+</ul>
+<hr>
+<h2 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h2><ul>
+<li>groupadd group_name 创建一个用户组</li>
+<li>groupdel group_name 删除一个用户组</li>
+<li>groupmod -n new_group_name old_group_name 重命名一个用户组</li>
+<li>useradd user1 创建一个用户</li>
+<li>userdel -r user1 删除一个用户（-r排除主目录）</li>
+<li>usermod -c “User FTP” -g system -d /ftp/usr1 -s /bin/nologin user1 修改用户属性</li>
+<li>passwd 修改口令</li>
+<li>passwd user1 修改一个用户口令</li>
+<li>chage -E 2019-11-9 user1 设置用户口令失效时间</li>
+<li>newgrp group_name 登录一个新的群组以改变新创建文件的预设群组</li>
+<li>pwck 检查’/etc/passwd’的文件格式和语法修正以及存在的用户</li>
+<li>grpck 检查’/etc/passwd’的文件格式和语法修正以及存在的群组</li>
+</ul>
+<hr>
+<h2 id="文件的权限及属性"><a href="#文件的权限及属性" class="headerlink" title="文件的权限及属性"></a>文件的权限及属性</h2><ul>
+<li>ls -lh 显示权限</li>
+<li>chmod ugo+rwx diretory1 设置目录所有人，群组，其他人的读写执行权限</li>
+<li>chmod go-rwx diretory1 删除群组，其他人的读写执行权限</li>
+<li>chown user1 file1 改变一个文件的所有人属性</li>
+<li>chown -R user1 directory1改变一个目录的所有人属性及其目录下的所有文件属性</li>
+<li>chgrp group1 file1 改变文件的群组</li>
+<li>chown user1：group1 file1改变一个文件的所有人和群组属性</li>
+<li>find / -perm -u+s 罗列系统中所有使用SUID控制的文件</li>
+</ul>
+<p><strong>chmod</strong></p>
+<ul>
+<li>chmod u+s /bin/file1 设置一个二进制文件的SUID位</li>
+<li>chmod u-s /bin/file1 禁用一个二进制文件的SUID位</li>
+<li>chmod g+s /home/pulic 设置一个目录的SGID位</li>
+<li>chmod g-s /home/pulic 禁用一个目录的SGID位</li>
+<li>chmod o+t /hoem/pulic 设置一个文件的STIKY位（只允许合法所有人删除文件）</li>
+<li>chmod o-t /hoem/pulic 删除一个文件的STIKY位</li>
+</ul>
+<p><strong>chattr</strong></p>
+<ul>
+<li>chattr +a file1 只允许以追加方式读写文件</li>
+<li>chattr +c file1 只允许被内核自动解压或者压缩</li>
+<li>chattr +d file1 在进行文件系统备份时，dump程序将忽略这个文件</li>
+<li>chattr +i file1 设置为不可变文件（无法删除，修改，重命名，链接等）</li>
+<li>chattr +s fiel1 允许一个文件被安全的删除</li>
+<li>chattr +S file1 一旦这个文件被进行了写操作，便立刻写入磁盘</li>
+<li>chattr +u file1 若文件被删除，系统会允许你以后恢复这个文件</li>
+<li>lsattr 显示特殊属性</li>
+</ul>
+<hr>
+<h2 id="挂载文件系统"><a href="#挂载文件系统" class="headerlink" title="挂载文件系统"></a>挂载文件系统</h2><ul>
+<li>mount /dev/hda2 /mnt/hda2 挂载一个hda2的盘 -确定目录/mnt/hda2已经存在</li>
+<li>umount /dev/hda2 卸载hda2的盘-先从/mnt/hda2退出</li>
+<li>fuser -km /mnt/hda2 当系统繁忙时强制卸载</li>
+<li>umount -n /mnt/hda2 运行卸载操作而不写入磁盘，在文件以只读时或磁盘写满时非常有用</li>
+<li>mount /dev/fb0 /mnt/floppy 挂载一个软盘</li>
+<li>mount -o loop file.iso /mnt/cdrom 挂载一个文件或者ISO镜像</li>
+<li>mount /dev/sda1 /mnt/usbdisk 挂载一个usb或者闪存设备<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2></li>
+<li>ps aux 查看所有进程</li>
+<li>ps -le 查看所有进程并按优先级显示（ps aux 是用BSD的格式来显示这个进程显示的项目有：USER , PID , %CPU , %MEM , VSZ , RSS , TTY , STAT , START , TIME , COMMAND，ps -ef 是用标准的格式显示这个进程显示的项目有：UID , PID , PPID , C , STIME , TTY , TIME , CMD）</li>
+<li>ps -e | grep servername 查看servernam进程</li>
+<li>kill -9 [PID] 终止进程</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>服务器 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="1.使用内存数据库 内存数据库，其实就是将数据放在内存中直接操作的数据库。相对于磁盘，内存的数据读写速度要高出几个数量级，将数据保存在内存中相比从磁盘上访问能够极大地提高应用的性能。内存数据库抛弃了,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">服务器</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">服务器</h1>
+        <div class="stuff">
+            <span>十一月 22, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BB%BC%E5%90%88/" rel="tag">综合</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="1-使用内存数据库"><a href="#1-使用内存数据库" class="headerlink" title="1.使用内存数据库"></a>1.使用内存数据库</h2><pre><code> 内存数据库，其实就是将数据放在内存中直接操作的数据库。相对于磁盘，内存的数据读写速度要高出几个数量级，将数据保存在内存中相比从磁盘上访问能够极大地提高应用的性能。内存数据库抛弃了磁盘数据管理的传统方式，基于全部数据都在内存中重新设计了体系结构，并且在数据缓存、快速算法、并行操作方面也进行了相应的改进，所以数据处理速度比传统数据库的数据处理速度要快很多。
+但是安全性的问题可以说是内存数据库最大的硬伤。因为内存本身有掉电丢失的天然缺陷，因此我们在使用内存数据库的时候，通常需要，提前对内存上的数据采取一些保护机制，比如备份，记录日志，热备或集群，与磁盘数据库同步等方式。对于一些重要性不高但是又想要快速响应用户请求的部分数据可以考虑内存数据库来存储，同时可以定期把数据固化到磁盘。</code></pre><h2 id="2-使用RDD"><a href="#2-使用RDD" class="headerlink" title="2.使用RDD"></a>2.使用RDD</h2><pre><code>在大数据云计算相关领域的一些应用中，Spark可以用来加快数据处理速度。Spark的核心是RDD，RDD最早来源与Berkeley实验室的一篇论文《Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing》。现有的数据流系统对两种应用的处理并不高效：一是迭代式算法，这在图应用和机器学习领域很常见；二是交互式数据挖掘工具。这两种情况下，将数据保存在内存中能够极大地提高性能。</code></pre><h2 id="3-增加缓存"><a href="#3-增加缓存" class="headerlink" title="3.增加缓存"></a>3.增加缓存</h2><pre><code>很多web应用是有大量的静态内容，这些静态内容主要都是一些小文件，并且会被频繁的读，采用Apache以及nginx作为web服务器。在web访问量不大的时候，这两个http服务器可以说是非常的迅速和高效，如果负载量很大的时候，我们可以采用在前端搭建cache服务器，将服务器中的静态资源文件缓存到操作系统内存中直接进行读操作，因为直接从内存读取数据的速度要远大于从硬盘读取。这个其实也是增加内存的成本来降低访问磁盘带来的时间消耗。</code></pre><h2 id="4-使用SSD"><a href="#4-使用SSD" class="headerlink" title="4.使用SSD"></a>4.使用SSD</h2><pre><code>除了对内存方面的优化，还可以对磁盘这边进行优化。跟传统机械硬盘相比，固态硬盘具有快速读写、质量轻、能耗低以及体积小等特点。但是ssd的价格相比传统机械硬盘要贵，有条件的可以使用ssd来代替机械硬盘。</code></pre><h2 id="5-优化数据库"><a href="#5-优化数据库" class="headerlink" title="5.优化数据库"></a>5.优化数据库</h2><pre><code>大部分的服务器请求最终都是要落到数据库中，随着数据量的增加，数据库的访问速度也会越来越慢。想要提升请求处理速度，必须要对原来的单表进行动刀了。目前主流的Linux服务器使用的数据库要属mysql了，如果我们使用mysql存储的数据单个表的记录达到千万级别的话，查询速度会很慢的。根据业务上合适的规则对数据库进行分区分表，可以有效提高数据库的访问速度，提升服务器的整体性能。另外对于业务上查询请求，在建表的时候可以根据相关需求设置索引等，以提高查询速度。</code></pre><h2 id="6-选择合适的IO模型"><a href="#6-选择合适的IO模型" class="headerlink" title="6.选择合适的IO模型"></a>6.选择合适的IO模型</h2><p>IO模型又分为：</p>
+<pre><code> (1).阻塞I/O模型：数据没到达之前，I/O一直阻塞，如果数据到达，则会返回。典型的是recvfrom，一般的默认都是阻塞的。
+ (2).非阻塞的I/O模型：和阻塞相反，只要不能得到结果的时候，I/O立刻返回。不会阻塞当前线程。
+ IO复用模型：也就是自己要学习的部分。多路复用的意思是，将多路信号合并到一路上进行处理，类似多个管道汇集到一个管道，与之相反的是多路分解。
+ IO复用模型主要是select，poll，epoll；对一个IO端口，两次调用，两次返回，比阻塞IO并没有什么优越性；关键是能实现同时对多个IO端口进行监听；函数也会使进程阻塞，但是和阻塞I/O所不同的的，这两个函数可以同时阻塞多个I/O操作。而且可以同时对多个读操作，多个写操作的I/O函数进行检测，直到有数据可读或可写时，才真正调用I/O操作函数。
+信号驱动：首先开启套接口信号驱动I/O功能,并通过系统调用sigaction安装一个信号处理函数。当数据报准备好被读时，就为该进程生成一个SIGIO信号。随即可以在信号处理程序中调用recvfrom来读数据报，井通知主循环数据已准备好被处理中。也可以通知主循环，让它来读数据报。
+ 异步的IO模型：告知内核启动某个操作，并让内核在整个操作完成后(包括将数据从内核拷贝到用户自己的缓冲区)通知我们。这里并不是说一定要用某个模型，epoll也并不是在所有情况下都比select性能要好的，在选择的时候还是要结合业务需求来。</code></pre><h2 id="7-使用多核处理策略"><a href="#7-使用多核处理策略" class="headerlink" title="7.使用多核处理策略"></a>7.使用多核处理策略</h2><pre><code>现在运行服务器的主流机器配置都是多核CPU的，我们在设计服务器的时候可以利用多核心的特点，采用多进程或者多线程的框架。关于选择多线程还是多进程可以根据实际的需求，结合各自的优缺点进行选择。对于多线程的使用，特别是使用线程池的时候可以通过测试不同线程池服务器的性能来设置合适的线程池。</code></pre><h2 id="8-分布式部署程序"><a href="#8-分布式部署程序" class="headerlink" title="8.分布式部署程序"></a>8.分布式部署程序</h2><pre><code>当单机服务器已经找不到合适的优化点时，我们可以通过分布式部署来提高服务器的响应能力。优秀的服务器开发都会为自己的服务器的扩容，容灾提出一些解决方案。个人觉得服务器设计的时候简单点比较好，这样后期扩容的时候会很方便。</code></pre><p>————————————————<br>版权声明：本文为CSDN博主「老樊Lu码」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/fanyun_01/article/details/79942408" target="_blank" rel="noopener">https://blog.csdn.net/fanyun_01/article/details/79942408</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

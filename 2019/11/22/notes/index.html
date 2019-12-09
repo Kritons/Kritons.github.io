@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>问题笔记 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="此文章（持续更新中）为在电脑以及学习中遇到的部分小问题的总合以及其网上的解决办法，方便下次遇到相同问题能够快速解决，如包括电脑的突发的各种状况，某些好用的插件，网站等,此文章会持续更新。
+系统错误及,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">问题笔记</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">问题笔记</h1>
+        <div class="stuff">
+            <span>十一月 22, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="此文章（持续更新中）为在电脑以及学习中遇到的部分小问题的总合以及其网上的解决办法，方便下次遇到相同问题能够快速解决，如包括电脑的突发的各种状况，某些好用的插件，网站等-此文章会持续更新。"><a href="#此文章（持续更新中）为在电脑以及学习中遇到的部分小问题的总合以及其网上的解决办法，方便下次遇到相同问题能够快速解决，如包括电脑的突发的各种状况，某些好用的插件，网站等-此文章会持续更新。" class="headerlink" title="此文章（持续更新中）为在电脑以及学习中遇到的部分小问题的总合以及其网上的解决办法，方便下次遇到相同问题能够快速解决，如包括电脑的突发的各种状况，某些好用的插件，网站等,此文章会持续更新。"></a>此文章（持续更新中）为在电脑以及学习中遇到的部分小问题的总合以及其网上的解决办法，方便下次遇到相同问题能够快速解决，如包括电脑的突发的各种状况，某些好用的插件，网站等,此文章会持续更新。</h3><hr>
+<h2 id="系统错误及问题"><a href="#系统错误及问题" class="headerlink" title="系统错误及问题"></a>系统错误及问题</h2><ul>
+<li>windows系统电脑的不正常会可能导致注册表发生错误，从而导致下次开机时，部分应用无法打开。<ul>
+<li>解决方案：windows+x打开打开系统界面，选择管理员权限的windows powershell，进入后，输入 netsh winsock reset 重置注册表，重启后便可解决问题！</li>
+</ul>
+</li>
+<li>Ubuntu系统每次启动时都显示System program problem detected，<ul>
+<li>sudo gedit /etc/default/apport，将enabled=1改为enabled=0保存退出即可</li>
+</ul>
+</li>
+<li>Unable to locate package openssh-serve 无法找到openssh安装源，大概率为apt-get版本低问题，sudo apt-get update(更新软件源）执行安装操作，如果不成功，执行sudo apt-get upgrade（继续更新软件源）应该能成功。<h2 id="常用的代码"><a href="#常用的代码" class="headerlink" title="常用的代码"></a>常用的代码</h2></li>
+<li><a href="https://www.cnblogs.com/li-jun-wei/p/8743088.html" target="_blank" rel="noopener">毛玻璃特效代码例子</a><h2 id="各类的系统配置方法的链接："><a href="#各类的系统配置方法的链接：" class="headerlink" title="各类的系统配置方法的链接："></a>各类的系统配置方法的链接：</h2></li>
+<li><a href="https://blog.csdn.net/qq_25774883/article/details/81589257" target="_blank" rel="noopener">hexo博客建立</a></li>
+<li><a href="https://blog.csdn.net/xuyankuanrong/article/details/80246203" target="_blank" rel="noopener">xftp与虚拟机连接的配置</a><h2 id="各软件使用方法的链接："><a href="#各软件使用方法的链接：" class="headerlink" title="各软件使用方法的链接："></a>各软件使用方法的链接：</h2></li>
+<li><a href="https://blog.csdn.net/yangchenju/article/details/80633055" target="_blank" rel="noopener">Navicat Premium 12</a></li>
+<li><a href="https://blog.csdn.net/m0_37724356/article/details/79884006" target="_blank" rel="noopener">Chrome f12</a></li>
+<li><a href="https://www.vpser.net/manage/screen.html" target="_blank" rel="noopener">screen</a><h2 id="各软件安装包的链接："><a href="#各软件安装包的链接：" class="headerlink" title="各软件安装包的链接："></a>各软件安装包的链接：</h2></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://q125tx09n.bkt.clouddn.com/%E8%8C%85%E9%87%8E%E6%84%9B%E8%A1%A3,%E6%88%B8%E6%9D%BE%E9%81%A5,%E6%97%A9%E8%A6%8B%E6%B2%99%E7%B9%94%20-%20secret%20base%20~%E5%90%9B%E3%81%8C%E3%81%8F%E3%82%8C%E3%81%9F%E3%82%82%E3%81%AE~%20%2810%20years%20after%20Ver.%29.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SQL基础 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="
+
+use maysqlname; 命令用于选择数据库。
+set names utf8; 命令用于设置使用的字符集。
+SELECT
+SELECT * FROM Websites; 读取Website,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">SQL基础</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">SQL基础</h1>
+        <div class="stuff">
+            <span>十二月 04, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id=""><a href="#" class="headerlink" title=""></a></h3><hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><ul>
+<li>use maysqlname; 命令用于选择数据库。</li>
+<li>set names utf8; 命令用于设置使用的字符集。</li>
+<li>SELECT<ol>
+<li>SELECT * FROM Websites; 读取Websites数据表的信息。（大小写不敏感）</li>
+<li>SELECT A,B FROM Table; 从Table表提出A，B项</li>
+<li>SELECT DISTTNCT A FROM Table；从Tabel表中提取A项的值不同的几个元素</li>
+<li>SELECT * FROM Table WHERE A=’CN’;从Table表中提取A项为CN的元素（如果为数值字段，则不用单引号）</li>
+<li>SELECT * FROM Table   WHERE A=’CN’  ANDAND B &gt; 50;(从Table表中取出A为CN而且B大于50的元素)</li>
+<li>SELECT * FROM Table   WHERE A = ‘CN’   OR B = 79；(从Table表中取出A为CN或者B为79的元素)</li>
+<li>SELECT * FROM Table   WHERE B &gt; 15   AND (A = ‘CN’ OR A = ‘UA’);（从表中取出B大于15且A为CN或者UA的数据，AND跟OR结合使用）</li>
+<li>SELECT * FROM Table   ORDER BY B;(从Table表中取出所有数据，并按B表排列)</li>
+<li>SELECT * FROM Table   ORDER BY B DESC;(从Table表中取出所有数据，并按B表降序排列)</li>
+<li>SELECT * FROM Table   ORDER BY A,B;（从Table表中取出所有数据，并先按A元素，后按B元素排列，字符段先排首字母，再排相同字符段，如果A后面加DESC，则A降序，B升序，反之亦然）</li>
+</ol>
+</li>
+<li>INSERT INTO<ol>
+<li>INSERT INTO Table (name,A,B,C)   VALUES (‘TOM’,’US’,57,49);(从Table表中加入一列，其name为TOM，A，B，C，分别为US，57，49；首列id不用加，其会自动添加，若插入的新行中某列数据未添加，则系统自动设置其添加元素列为0)</li>
+</ol>
+</li>
+<li>UPDATE - 更新数据库中的数据<ol>
+<li>UPDATE Table   SET A = ‘UA’，B = 47   WHERE name = ‘TOM’;(更新Table表，将name项为TOM的元素的A改为UA，B改为57，当未用WHERE指定元素时将全部A跟B修改)</li>
+</ol>
+</li>
+<li>DELETE - 从数据库中删除数据<ol>
+<li>DELETE FROM Table   WHERE name=’TOM’ AND A=’US’;（删除Table中的name项为TOM且A为US的元素）</li>
+<li>DELETE FROM Tabel；（删除所有元素，但表的结构不变）</li>
+</ol>
+</li>
+<li>MySQL SELECT LIMIT<ol>
+<li>SELECT * FROM Table LIMIT 2;（选取Table表的前2条元素，适用于Mysql）</li>
+</ol>
+</li>
+<li>SQL LIKE<ol>
+<li>SELECT * FROM Table   WHERE name LIKE ‘T%’;（从Table表中选取所有name项的值以T开始的元素，如果改成’%M’，则表示以M结尾的项，’%O%’,则表示包含O的项，在LIKE前加NOT则表示不含）</li>
+<li>通配符 % 表示0或者多个字符，_表示以一个字符，[charlist]表示字符列中的任何单一字符；[!charlist]或者[^charlist]表示不在字符列中的任何单一字符。例：_oogle，%oo%，’[CK]ars[eo]n’，’[M-Z]inmage，’M[^c]%’等。</li>
+<li>SELECT * FROM Table   WHERE name REGEXP ‘^[GFs]’;（选取name以G，F或者s开头的name项，REGEXP为操作运算符）</li>
+<li>SELECT * FROM Table   WHERE name REGEXP ‘^[A-H]’；（选取nameA到H字母开头的name项，REGEXP为操作运算符）</li>
+<li>SELECT * FROM Table   WHERE name REGEXP ‘^[^A-H]’;（选取name不以A到H字母开头的name项，REGEXP为操作运算符）</li>
+</ol>
+</li>
+<li>SQL IN<ol>
+<li>SELECT * FROM Table   WHERE name IN (‘TOM’,’ALICE’)；（从table表中选取name为TOM或ALICE的元素，此操作允许指定多个选项值）</li>
+</ol>
+</li>
+<li>SQL BETWEEN<ol>
+<li>SELECT * FROM Table   WHERE B BETWEEN 1 AND 100;(从Table表中选取A在1到100之间的元素)</li>
+<li>SELECT * FROM Table   WHERE B NOT BETWEEN 1 AND 100;(从Table表中选取A不在1到100之间的元素)</li>
+<li>SELECT * FROM Table   WHERE (B BETWEEN 1 AND 20)   AND A NOT IN (‘UA’, ‘CN’);（从Table表中选取B项在1到20之间且A不为UA或者CN的项）</li>
+<li>SELECT * FROM Table   WHERE name BETWEEN ‘A’ AND ‘H’;（从Table表中选取name以A和H之间开头的元素）</li>
+<li>SELECT * FROM Table   WHERE name NOT BETWEEN ‘A’ AND ‘H’;（从Table表中选取name不以A和H之间开头的元素）</li>
+</ol>
+</li>
+<li>SQL AS<ol>
+<li>SELECT name AS n, A AS c   FROM Table;(从Table表中将name取为n名，将A取为c名，使表更简洁)</li>
+<li>SELECT name, CONCAT(A, ‘, ‘, name, ‘, ‘, B) AS hunme   FROM Table;；(将A，name，B合并为hunme项，并且各元素显示时用逗号隔开)</li>
+</ol>
+</li>
+<li>SQL 连接（JOIN）<ol>
+<li>SELECT Table.B,Table.name,Log.c,Log.date   FROM Table   INNER JOIN Log   ON Table.B=Log.b;(将Table表和Log表连接，新表项为B，name，c，date；其中Tabel中的B为Log表中的b)</li>
+</ol>
+</li>
+<li></li>
+<li>CREATE DATABASE - 创建新数据库</li>
+<li>ALTER DATABASE - 修改数据库</li>
+<li>CREATE TABLE - 创建新表A</li>
+<li>ALTER TABLE - 变更（改变）数据库表B</li>
+<li>DROP TABLE - 删除表B</li>
+<li>CREATE INDEX - 创建索引（搜索键）WWme</li>
+<li>DROP INDEX - 删除索引 ACNc</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHP基础 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kritons,"> 
+    <meta name="description" content="元素
+数组：数值数组，关联数组，混合数组，多维数组（以下定义方式（）可换成[]）
+
+
+数值数组123$car[1] = a;  //指定索引的方式定义数组$car[2] = b;$car[3] = ,"> 
+    <meta name="author" content="kritons"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">PHP基础</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">PHP基础</h1>
+        <div class="stuff">
+            <span>十一月 22, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
+<li>数组：数值数组，关联数组，混合数组，多维数组（以下定义方式（）可换成[]）</li>
+</ul>
+<ol>
+<li>数值数组<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$car[<span class="number">1</span>] = a;  <span class="comment">//指定索引的方式定义数组</span></span><br><span class="line">$car[<span class="number">2</span>] = b;</span><br><span class="line">$car[<span class="number">3</span>] = c;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$car[] = a;  <span class="comment">//不指定下标，其下表默认从零开始，倘若第一项指定一个数，后面按此数递增（不会递减）</span></span><br><span class="line">$car[] = b;  <span class="comment">//若2个下标相同，后面会覆盖前面的</span></span><br><span class="line">$car[] = c;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$car = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">$result = []; <span class="comment">//定义一个空数组</span></span><br></pre></td></tr></table></figure></li>
+<li>关联数组<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$car[<span class="string">'name'</span>] = <span class="string">"alice"</span>; <span class="comment">//最为常用的数组</span></span><br><span class="line">$car[<span class="string">'age'</span>] = <span class="number">15</span>;</span><br><span class="line">$car[<span class="string">'id'</span>] = <span class="number">971</span>;</span><br></pre></td></tr></table></figure></li>
+<li>array()定义数组<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="keyword">array</span>(<span class="number">1</span> =&gt; <span class="string">"A"</span>,<span class="number">2</span> =&gt; <span class="string">"B"</span>,<span class="number">3</span> =&gt; <span class="string">"C"</span>);</span><br><span class="line">$a = <span class="keyword">array</span>(<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"c"</span>) <span class="comment">//echo"&lt;pre&gt;"原型输出，横着输出数组</span></span><br></pre></td></tr></table></figure></li>
+<li>混合数组<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="keyword">array</span>[<span class="number">1</span> = &gt; <span class="string">"A"</span>,two =&gt; <span class="string">"B"</span>]</span><br></pre></td></tr></table></figure></li>
+<li>多维数组<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$b = <span class="keyword">array</span>(<span class="string">"a"</span> = &gt; <span class="keyword">array</span>(<span class="number">1</span> =&gt; <span class="keyword">array</span>(<span class="string">"aa"</span>)),<span class="string">"b"</span> = <span class="keyword">array</span>(<span class="string">"bbb"</span>)); <span class="comment">//三维数组，数组尽量不要超过三维，不然程序执行慢</span></span><br><span class="line"><span class="keyword">echo</span> $b[a][<span class="number">1</span>][<span class="number">0</span>].<span class="string">"&lt;br&gt;"</span>;</span><br></pre></td></tr></table></figure></li>
+<li>遍历数组 利用count（）函数：获取数组元素个数，array_valuse()：数组元素按0索引排列,foreach()函数<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$info = [<span class="string">"name"</span> = <span class="string">"alice"</span>,<span class="string">"age"</span> = <span class="number">15</span>,<span class="string">"id"</span> = <span class="number">761</span>]</span><br><span class="line">$foreach($info <span class="keyword">as</span> $k =&gt; $v)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> $k . <span class="string">'.'</span> . $v . <span class="string">' '</span>;</span><br><span class="line">&#125;</span><br><span class="line">$foreach($info <span class="keyword">as</span> $v)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> $v .<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">foreach</span>($list <span class="keyword">as</span> $values) &#123;       <span class="comment">// 遍历2维数组</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;tr&gt;"</span>;</span><br><span class="line">    <span class="keyword">foreach</span>($values <span class="keyword">as</span> $v) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;td align='center'&gt;&#123;$v&#125;&lt;/td&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;/tr&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;/table&gt;"</span>;</span><br></pre></td></tr></table></figure></li>
+<li>常用数组操作元素 each（），lsit()，reset()<ol>
+<li>each（） 传入一个数组，输出一个数组，其中包括第一个元素的值以及索引，多次调用，依次输出下几个元素</li>
+<li>list（） 数组的批量赋值       <code>list($x,$y,$z) = array（10，20，30）;</code></li>
+<li>reset() 重置数组指针<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reset($C)       <span class="comment">//如果前面已经操作数组，则需重置指针</span></span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">list</span>($x,$y) = each($c))</span><br><span class="line">&#123;</span><br><span class="line">    each $x. <span class="string">"=&gt;"</span>.$y.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>预定义数组 系统定义的数组  $_SERVER:系统信息数组<br>$_SERVER[“SERVER_NAME”] 服务器名称<br>$_SERVER[“SERVER_ADDR”] IP地址<br>$_SERVER[“SERVER_PORT”] 端口号</li>
+<li>常用数组函数（系统定义的函数用c语言编写，效率高）<ol>
+<li>array_values(); 数组所有的键和值按索引从0开始排列  </li>
+<li>array_keys()； 获取所有键</li>
+<li>array_flip();  键值交换</li>
+<li>array_reverse(); 数组单元顺序对调</li>
+<li>count(); 获取数组长度</li>
+<li>array_unique(); 去除重复值的元素，只是屏蔽而不是删除原数组</li>
+<li>sort()；不保持索引的升值排序</li>
+<li>asort();保持索引的升序排序</li>
+<li>rsort();不保持索引的降序排序</li>
+<li>arsort();保持索引的降序排序</li>
+<li>array_slice($array,A,B，false） 取出A开始，B长度的数组，默认为false，改为true着不保持索引排序</li>
+<li>array_combine($a,$b) 数组的键值合并，a中的元素当值，b中的元素当键</li>
+<li>array_merge($a,$b)  数组的首尾定义，按索引为0开始排列</li>
+</ol>
+<ul>
+<li><a href="/phparrayfunctions.md">其余详细数组函数可翻阅此文章</a></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>字符串</li>
+</ul>
+<ol>
+<li>输出函数：ehco”aaa<br>“,print”aaa<br>“,var_dump(“ccc”); //$s = “”;定义个空字符串</li>
+<li>字符串常用处理函数r<ol>
+<li>ltrim();去除左侧多余字符，默认删除空格,ltrim($a,”@”),去除a字符串左边的@，无论多少个</li>
+<li>rtrim();去除右侧多余字符，默认删除空格</li>
+<li>trim();去除两侧多余字符，默认删除空格</li>
+</ol>
+<ul>
+<li>使用rtrim（）进行文件路径无误拼接：rtrim($path,”/“).”/“.$file;(保证前文件路径后无/)</li>
+</ul>
+<ol start="4">
+<li>strtolower();字符串小写</li>
+<li>strtoupper();字符串大写</li>
+<li>ucfirst()；首字母大写</li>
+<li>ucwords()；每个字母首字母大写（以空格分辨字母）</li>
+<li>strrev();字符串颠倒</li>
+<li>strlen();获取字符串长度，utf-8编码中1个汉字占3个字节，GKB占2个字节，</li>
+<li>mb_strlen();可获取汉字字符串长度，一个汉字长度为1</li>
+<li>strcmp(“a”,”c”);比较2个字符串比较，相等返回0，第一个大于第二个返回-1，反之返回1，例返回-1</li>
+<li>similar_text();比较2个字符串相似度<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str1 = <span class="string">"aa bb cc dd yunwelq"</span></span><br><span class="line">$str2 = <span class="string">"aa bb cc dd yuwwnwelq"</span></span><br><span class="line"><span class="keyword">echo</span> ((simiar_text($str1,$str2)/strlen($str2))*<span class="number">100</span>).<span class="string">"%"</span>; <span class="comment">//需除以str2长度</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>字符拆装函数：explode();implode();</strong><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$str =<span class="string">"a,b,c,d,e,f"</span>;</span><br><span class="line">$a = explode(<span class="string">","</span>,$str); <span class="comment">//将字符串以，为分隔的进行拆分</span></span><br><span class="line">ehco <span class="string">"&lt;pre&gt;"</span>;</span><br><span class="line">print_r($a);  <span class="comment">//其拆分的结果为数组存储</span></span><br><span class="line"><span class="keyword">echo</span> implode(<span class="string">"@"</span>，$a); <span class="comment">//将此数组以@为间隔拼接成字符串  a@b@c@d@e@f</span></span><br></pre></td></tr></table></figure>
+<ol start="14">
+<li>substr();字符截取<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">"zhangsangfeng"</span>;</span><br><span class="line"> <span class="keyword">echo</span> substr($str,<span class="number">5</span>,<span class="number">3</span>);      <span class="comment">//san</span></span><br><span class="line"> ehco substr($str,<span class="number">5</span>,<span class="number">-4</span>);     <span class="comment">//san</span></span><br><span class="line"> <span class="keyword">echo</span> substr($str,<span class="number">-7</span>,<span class="number">3</span>);     <span class="comment">//san</span></span><br><span class="line"> <span class="keyword">echo</span> substr($str,<span class="number">-7</span>,<span class="number">-4</span>);    <span class="comment">//san</span></span><br><span class="line"> <span class="keyword">echo</span> substr($str,<span class="number">-4</span>,<span class="number">-7</span>);    <span class="comment">//无结果</span></span><br></pre></td></tr></table></figure></li>
+<li>strstr();查找并截取字符串<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">"zhangsangfeng"</span>;</span><br><span class="line"><span class="keyword">echo</span> strstr($str,<span class="string">"an"</span>); <span class="comment">//angsangfeng</span></span><br><span class="line"><span class="keyword">echo</span> strstr($str,<span class="string">"an"</span>,<span class="keyword">true</span>); <span class="comment">//zh</span></span><br></pre></td></tr></table></figure></li>
+<li>strpos();strrpos();获取字符串出现的位置<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">"zhangsangfeng"</span>;</span><br><span class="line"><span class="keyword">echo</span> strpos($str,<span class="string">"an"</span>).<span class="string">"&lt;br&gt;"</span>;   <span class="comment">//2</span></span><br><span class="line"><span class="keyword">echo</span> strrpos($str<span class="string">"an"</span>).<span class="string">"&lt;br&gt;"</span>;   <span class="comment">//6</span></span><br></pre></td></tr></table></figure></li>
+<li>str_replace(); 字符串的替换<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">"10,23:34,653:213,4"</span>;</span><br><span class="line"><span class="keyword">echo</span> str_replace(<span class="string">","</span>,<span class="string">"@"</span>,$str); <span class="comment">//,全部替换为@</span></span><br><span class="line"><span class="keyword">echo</span> str_replace(<span class="keyword">array</span>(<span class="string">","</span>,<span class="string">":"</span>),<span class="string">"@"</span>,$str);   <span class="comment">//,和：全部替换成@</span></span><br><span class="line"><span class="keyword">echo</span> str_replace(arry(<span class="string">","</span>,<span class="string">":"</span>),<span class="keyword">array</span>(<span class="string">"@"</span>,<span class="string">"#"</span>),$str); <span class="comment">//,替换成@以及：替换成#</span></span><br></pre></td></tr></table></figure></li>
+<li>file_get_contents();fie_put_contents();字符串的文件读取及写入<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   $str = <span class="string">"alice"</span>;</span><br><span class="line">   file_put_contents(<span class="string">"./a.txt"</span>,$str);<span class="comment">//覆盖写入</span></span><br><span class="line">   file_put_contents(<span class="string">"./a.txt"</span>,$str,FILE_APPEND); <span class="comment">//追加写入</span></span><br><span class="line">   <span class="keyword">echo</span> file_get_contents()</span><br><span class="line">   ``` </span><br><span class="line"><span class="number">3.</span> 网页格式化函数</span><br><span class="line">```php</span><br><span class="line">    $str = <span class="string">"&lt;a href='http://www.yunchi.com"</span>&gt;heox&lt;/a&gt;<span class="string">";</span></span><br><span class="line"><span class="string">    htmlspecialchars($str)."</span>&lt;br&gt;<span class="string">"; // 将输出字符值，其标签被格式化</span></span><br><span class="line"><span class="string">    htmlentities($str)."</span>&lt;br&gt;<span class="string">";    //与上面一致</span></span><br><span class="line"><span class="string">    strip_tags($str)."</span>&lt;br&gt;<span class="string">";      //只输出hexo</span></span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>\ 转义字符\进行转义，比如在单引号输出的字符串中输出单引号，其中的单引号需要转义,当然双引号的双引号也一样。</li>
+<li>&lt;&lt;&lt; 定界符 &lt;&lt;&lt; 定界符名称   定界符名称,注意定界符名称后不能有任何字符包括空格，结束的定界符前也不能有任何字符，且定界符必须赋值各一个变量。</li>
+<li>单引号不会解析变量，双引号可以，定界符中也可以解析变量</li>
+<li>三元运算符</li>
+<li>&amp; 取地址符  当传递参数时，取地址符参数传入，则其值会改变，当为用其地址符传入时，其值不会变<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2></li>
+<li>++ a 先自增在赋值   a ++ 先赋值在自增<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><tr><td><hr></h2><h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2></li>
+</ul>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><ul>
+<li>静态变量（函数内使用的变量，函数多次调用静态变量后，其值保持为上次调用的值，其初始化只执行一次）</li>
+<li>常规参数函数(以boll，int，float，string，arary为参数的函数)</li>
+<li>伪类型参数函数（以伪类型为参数的函数，number:数值，可传入数值；mixed：混合，可以传任何参数；callback：回调：一个函数的调用是利用另外一个函数完成的）<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function add（number $a,number $b) //number参数</span><br><span class="line">&#123;</span><br><span class="line">    $c = $a + $b;</span><br><span class="line">    <span class="keyword">return</span> $c;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span><span class="params">($add)</span> //回调函数</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $add();</span><br><span class="line">&#125;</span><br><span class="line">name(<span class="string">"add"</span>);</span><br></pre></td></tr></table></figure></li>
+<li>绝大部分的回调函数使用系统函数<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call_user_func(<span class="string">"add"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>)；  <span class="comment">//系统定义的回调函数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $m = func_num_args();  <span class="comment">//获取所传递参数的个数</span></span><br><span class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>;$i &lt; $m; $i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        $result += func_get_arg($i);  <span class="comment">//获取传入的参数,并自加</span></span><br><span class="line">        <span class="keyword">return</span> $result;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">$a = [<span class="number">20</span>,<span class="number">30</span>,<span class="number">90</span>];</span><br><span class="line"><span class="keyword">echo</span> call_user_func_array(<span class="string">"add"</span>,$a);  <span class="comment">//此系统回调函数需传入数组</span></span><br></pre></td></tr></table></figure></li>
+<li>默认参数函数<br><code>function add($a,$b,$c = 0)  //c为可选参数，当传入的参数为2个时，c为0</code></li>
+<li>匿名函数 没有名字的函数<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"hello!"</span>;</span><br><span class="line">&#125;;   <span class="comment">//匿名函数赋值变量后加；</span></span><br><span class="line">$name();</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span><span class="params">($v)</span>    //定义取偶函数</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $V % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">$a = [<span class="number">12</span>,<span class="number">3</span>,<span class="number">11</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">17</span>,<span class="number">18</span>]; <span class="comment">//定义数组</span></span><br><span class="line">$b = array_filter($a,<span class="string">"fun"</span>); <span class="comment">//取出偶数</span></span><br><span class="line">print_r($b);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_r(array_filter($a<span class="function">.<span class="keyword">function</span><span class="params">($v)</span></span>&#123;<span class="keyword">return</span> $v % <span class="number">2</span> == <span class="number">0</span>&#125;)); <span class="comment">//与上面一致，使用匿名函数</span></span><br></pre></td></tr></table></figure></li>
+<li>递归函数 大型的项目禁用，十分占用资req源</li>
+<li>函数库的使用 <ol>
+<li>require(“./1.php”);导入失败时报错，且程序不再执行</li>
+<li>include(“./1.php”);导入失败时报错，且程序可以执行</li>
+<li>include（”./1.php”）;他会检查包含的文件，如果包含过了，则不再包含，且不会报错，常用于开源产品<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2></li>
+</ol>
+</li>
+<li>原子：</li>
+</ul>
+<ol>
+<li>a 一位元素</li>
+<li>[abc] a或者b或者c</li>
+<li>[a-z] 任意一位小写字母</li>
+<li>[A-Z] 任意一位大写字母</li>
+<li>[0-9] 任意一位数字</li>
+<li>[0-9a-zA-Z_] 任意一位数字或者字母或者下划线 </li>
+<li>[^] 表示取反</li>
+<li>[0-9]{4} 任意一位4位数 //12345 返回值为 1 1234</li>
+<li>[a-z]{6} 任意6位小写字母</li>
+<li>[0-9]{5,} 任意至少5位数字</li>
+<li>[a-z]{4,8} 4位到8位字母，优先显示8位</li>
+<li>^[0-9] 以任意一位数字开头</li>
+<li>[0-9]$ 以任意一位数字结尾 //2abcd2 错误  2 正确 精确匹配</li>
+<li>? 表示前面的数量0次或者一次</li>
+<li>+表示前面的数量至少一次 <code>-?[0-9]{1,} = -?[0-9]+</code></li>
+<li>*前面的数量任意次</li>
+<li>. 匹配除了换行之外的所有特殊字符 </li>
+</ol>
+<ul>
+<li>例<br><code>print_r(preg_match(&quot;/^[0-9]{11}$/&quot;,&quot;13975321212&quot;)); // true,匹配电话号码11位</code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$qq = $_POST[<span class="string">"qq"</span>];</span><br><span class="line">$age = $_POST[<span class="string">"age"</span>];</span><br><span class="line">$email = $_POST[<span class="string">"email"</span>];</span><br><span class="line"><span class="keyword">if</span>(!is_numeric($qq))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"你输入的不是数字！"</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>（!preg_match(<span class="string">"/^[0-9]&#123;9,11&#125;$"</span>,$qq))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"你输入的格式错误！"</span>； <span class="comment">// die("你输入的格式错误！")；</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!preg_match(<span class="string">"/^[1-9][0-9]?$/"</span>,$age))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"请输入1到99以内的年龄！"</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!preg_mactch(<span class="string">"/[0-9a-zA-A_]&#123;6-18&#125;@[0-9a-z]+(\.[a-z]&#123;2,&#125;)&#123;1,2&#125;/"</span>,$email))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"输入的邮箱格式不对！"</span>)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正则匹配查找 （包括贪婪和懒惰匹配）<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    preg_match(<span class="string">"/[0-9]&#123;2&#125;/"</span>,<span class="string">"fd56we32"</span>,$a);</span><br><span class="line">    var_dump($a); <span class="comment">//返回一个数组，只返回56</span></span><br><span class="line">    preg_match_all(<span class="string">"/[0-9]&#123;2&#125;/"</span>,<span class="string">"fd56we32"</span>,$a); </span><br><span class="line">    var_dump($a); <span class="comment">//返回一个二维数组，返回56，32</span></span><br><span class="line">    $a = <span class="string">"&lt;b&gt;AAA&lt;/b&gt;&lt;b&gt;BBBBB&lt;/b&gt;&lt;b&gt;CCCCCC&lt;/b&gt;"</span>;</span><br><span class="line">    preg_match_all(<span class="string">"/&lt;b&gt;.+&lt;\/b&gt;/"</span>，$str,$a);</span><br><span class="line">    var_dump($a);<span class="comment">// 输出b&gt;AAA&lt;/b&gt;&lt;b&gt;BBBBB&lt;/b&gt;&lt;b&gt;CCCCCC&lt;/b&gt; 即贪婪匹配</span></span><br><span class="line">    preg_match_all(<span class="string">"/&lt;b&gt;.+&lt;\/b&gt;/U"</span>，$str,$b);</span><br><span class="line">    var_dump($b);<span class="comment">// 输出三个值的2维数组 即懒惰匹配</span></span><br><span class="line">    preg_match_all(<span class="string">"/&lt;b&gt;.+?&lt;\/b&gt;/"</span>，$str,$c);</span><br><span class="line">    var_dump($c);<span class="comment">// 输出三个值的2维数组 即懒惰匹配 拒绝贪婪的方式有.+?或者.*?(任意次)</span></span><br><span class="line">    preg_match_all(<span class="string">"/&lt;b&gt;(.+?)&lt;\/b&gt;/"</span>，$str,$d); <span class="comment">// 输出6个值的2维数组，包括&lt;b&gt;&lt;/b&gt;的内容，d其输出结果如下</span></span><br><span class="line">    var_dump($d);</span><br><span class="line">``` </span><br><span class="line">![输出结果]( /photos/canonical1.png)</span><br><span class="line">* preg_grep();执行正则表达式的查找</span><br><span class="line">```php</span><br><span class="line">$a = <span class="keyword">array</span>(<span class="string">"2019-11-19"</span>,<span class="string">"2019,11-19"</span>,<span class="string">"2019-11,19"</span>,<span class="string">"2019,11,19"</span>);</span><br><span class="line">$b = preg_grep(<span class="string">"/[0-9]&#123;4&#125;([-,])[0-9]\\1[0-9]&#123;2&#125;/"</span>,$a);</span><br><span class="line">print_r($b);<span class="comment">//输出- -和， ，格式的日期的数组，其中\\1表示重复（[-,]）的内容</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>preg_replace();执行正则表达式的替换<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$str =<span class="string">"21,543,43@3245:234,326"</span>;</span><br><span class="line"><span class="keyword">echo</span> preg_replace(<span class="string">"/^[0-9]+/"</span>,<span class="string">" "</span>,$str);<span class="comment">// 将非数字替换成空格</span></span><br><span class="line">$a = <span class="string">"2019-11-19"</span>;</span><br><span class="line"><span class="keyword">echo</span> preg_replace(<span class="string">"/([0-9]&#123;4&#125;)-([0-9])-([0-9]&#123;2&#125;)/"</span>,<span class="string">"\\2/\\3/\\1"</span>,$a); <span class="comment">//将2019-11-19替换成11/19/2019，熟练应用括号</span></span><br></pre></td></tr></table></figure></li>
+<li>preg_split();执行正则表达式分割字符串<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str =<span class="string">"21,543,43@3245:234,326"</span>;</span><br><span class="line">$a = preg_split(<span class="string">"/^[0-9]+/"</span>,$str);</span><br><span class="line">var_dump($a); <span class="comment">//输出一个一维数组，按非非数字位拆分</span></span><br></pre></td></tr></table></figure>
+<h2 id="表单c"><a href="#表单c" class="headerlink" title="表单c"></a>表单c</h2></li>
+<li>$_GET<ol>
+<li>会在地址栏显示</li>
+<li>会显示参数和前面的的文件或者域名使用 用？隔开</li>
+<li>不同参数之间                       用&amp;隔开</li>
+<li>参数的属性和值之间使用              用=隔开</li>
+<li>GET方式在地址栏中有长度限制</li>
+<li>不安全</li>
+</ol>
+</li>
+<li>$_POST<ol>
+<li>地址栏无显示</li>
+<li>基本无长度限制</li>
+<li>比较安全</li>
+</ol>
+</li>
+<li>_REQUEST<br>  1.get,post2种方式都能接收，无法进行提交<br>  2.不推荐使用，有一定bug<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2></li>
+<li>string strlen（string）；字符串取长度</li>
+<li>float ceil（float）；进1取整a</li>
+<li>string gettyp（mixed）；获取类型</li>
+<li>string substr(sting，star,strong)；截取字符串<br><code>substr(&quot;llysc&quot;,2,2)  //输出结果为ys，第一参数为截取开始的位置，第二个参数为截取的长度，可不写</code></li>
+<li>sort(arr); 对数组进行排序<h2 id="PHP错误处理"><a href="#PHP错误处理" class="headerlink" title="PHP错误处理"></a>PHP错误处理</h2></li>
+<li>Undefined Variable（未定义变量）</li>
+<li>PARSE（语法错误）<br>wamp/bin/apache/apache2.4.18/bin/php.ini 将error reporting = E_ALL改为 error reporting = E_ALL &amp; ~E_NOTICE 重启apache服务，则不会报语法错误<h2 id="PHP的日期和时间"><a href="#PHP的日期和时间" class="headerlink" title="PHP的日期和时间"></a>PHP的日期和时间</h2></li>
+<li>1970/1/1/0：0 计算机元年</li>
+<li><code>echo time();//从元年到现在的时间数，即获取时间戳，现约几十亿</code> </li>
+<li>与上面的函数功能一致函数有mktime()；(mktime（）需要time（）库函数)和strtotime(“now”);</li>
+<li>date();格式化时间戳<br><code>echo date(&quot;Y年m月d日&quot;,time()); //输出2019年11月19日</code><br><code>echo date(&quot;Y年m月d日H时i分s秒&quot;,time()); //输出2019年11月19日18时5分18秒 时区不同产生误差</code><br><code>date_default_timezone_set(&quot;Asia/shanghai&quot;);//设置时区，参数可在表中查</code><br><code>echo mktime(13,15,15,4,6,2019)//获取2019年4月6日13时15分15秒的时间戳</code><br><code>echo shrtotime(&quot;2019-4-6 13:15:15&quot;);//获取2019年4月6日13时15分15秒的时间戳(好用点)</code></li>
+</ul>
+<h2 id="PHP小知识"><a href="#PHP小知识" class="headerlink" title="PHP小知识"></a>PHP小知识</h2><ul>
+<li>b变成B的ASK码转换：<code>echo chr(ord(b)-32);// ord();转换为ASK码，chr（）；转回字母值</code><h2 id="PHP编译常见警告及错误"><a href="#PHP编译常见警告及错误" class="headerlink" title="PHP编译常见警告及错误"></a>PHP编译常见警告及错误</h2></li>
+<li>warning：Missing argument 3 for add（） add函数的低三个参数丢失</li>
+<li></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
